@@ -11,6 +11,7 @@ package com.example.demo;
      */
 
      /*  // get+set
+     
      public int getBalance() {
          return balance;
      }
@@ -41,6 +42,9 @@ package com.example.demo;
      public int checkMyBalance(){
          System.out.println(name + "잔액 :" + balance);
          return  balance;
+     }
+
+     public void setName(String 윤) {
      }
  }
 
