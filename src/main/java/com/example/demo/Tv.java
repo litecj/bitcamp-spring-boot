@@ -27,7 +27,14 @@ class Tv2 {
         return a1+a2;
     }*/
 }
-public class Tv {
+class Speaker {
+    int dolby;
+    public String sound (){
+        return "dolby";
+    }
+}
+
+public class Tv extends Speaker {
     //속성
     String model_name;
     int[] channel; //참조변수
@@ -47,6 +54,12 @@ public class Tv {
             channel[i] = i + 1;
         }
     }
+
+    public static void main(String[] args) {
+
+    }
+    class SmartTv extends Object{}
+
 
     Tv(String tv_name, int resolution){    //
         model_name = tv_name;
@@ -70,6 +83,7 @@ public class Tv {
     public void setCurrent_channel(int current_channel) {
         this.current_channel = current_channel;
     }
+
 }
 //public TvControl getTv() {
 //  return this;
@@ -86,6 +100,8 @@ public class Tv {
          */
 
 //Getter Setter
+
+//@Override
 
 
 //기능

@@ -4,7 +4,6 @@ package com.example.demo;
      int balance = 0;
      String name;
      /*  // 생성자
-
      BankAccount(String name){
          this.name = name;
      }
@@ -15,21 +14,18 @@ package com.example.demo;
      public int getBalance() {
          return balance;
      }
-
      public void setBalance(int balance) {
          this.balance = balance;
      }
-
      public String getName() {
          return name;
      }
-
      public void setName(String name) {
          this.name = name;
      }
      */
+     // Apa - 명칭 정리}
 
-     // Apa - 명칭 정리
 
      public int deposit (int amount) {
          balance += amount;
