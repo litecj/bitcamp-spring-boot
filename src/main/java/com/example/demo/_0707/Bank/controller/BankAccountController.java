@@ -2,18 +2,34 @@ package com.example.demo._0707.Bank.controller;
 
 import com.example.demo._0707.Bank.Domain.BankAccountDomain;
 
+import java.util.Scanner;
+
 public class BankAccountController {
     public static void main(String[] args) {
-        //두개의 인스턴스 생성
-        BankAccountDomain yoon = new BankAccountDomain();
-        yoon.setName("yoon");
-        BankAccountDomain park = new BankAccountDomain();
-        park.setName("park");
+        Scanner scanner = new Scanner(System.in);
+        BankAccountDomain bankAccountDomain = new BankAccountDomain();
+        System.out.println("name?");
+        bankAccountDomain.setName(scanner.next());
+        System.out.println("deposit?");
+        bankAccountDomain.setAmount(scanner.nextInt());
+        bankAccountDomain.deposit(bankAccountDomain.getAmount());
+        System.out.println(bankAccountDomain.toString());
+        System.out.println("withdraw?");
+        bankAccountDomain.setAmount(scanner.nextInt());
+        bankAccountDomain.withdraw(bankAccountDomain.getAmount());
+        System.out.println(bankAccountDomain.toString());
 
-        //yoon.setName("윤");
+        /*
+        bankAccountDomain.setBalance(scanner.nextInt());
+        System.out.println("withdraw?");
+
+        //yoon.setName("yoon");
+
         //System.out.println(yoon.getName());
 
+         */
 
+        /*
         //각 인스턴스를 대상으로 예금을 진행
         yoon.deposit(5000);
         park.deposit(3000);
@@ -23,5 +39,6 @@ public class BankAccountController {
         //각 인스턴스를 대상으로 잔액을 조회
         yoon.checkMyBalance();
         park.checkMyBalance();
+        */
     }
 }

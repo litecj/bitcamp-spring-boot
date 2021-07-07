@@ -2,31 +2,50 @@ package com.example.demo._0707.Bank.Domain;
 
 
 public class BankAccountDomain {
-    int balance = 0;
-    String name;
+    private int balance = 0;
+    private int amount;
+    int deposit;
+    int withdraw;
+    private String name;
      /*  // 생성자
      BankAccount(String name){
          this.name = name;
      }
      */
-
-     /*  // get+set
-
      public int getBalance() {
          return balance;
      }
      public void setBalance(int balance) {
          this.balance = balance;
      }
+    public int getAmount() {
+         return this.amount;
+    }
+    public void setAmount(int amount) {
+         this.amount = amount;
+    }
+    /*
+        public int getDeposit() {
+        return deposit;
+    }
+    public void setDeposit(int deposit) {
+        this.deposit = deposit;
+    }
+    public int getWithdraw() {
+        return withdraw;
+    }
+    public void setWithdraw(int withdraw) {
+        this.withdraw = withdraw;
+    }
+     */
      public String getName() {
          return name;
      }
      public void setName(String name) {
          this.name = name;
      }
-     */
-    // Apa - 명칭 정리}
 
+    // Apa - 명칭 정리}
 
     public int deposit (int amount) {
         balance += amount;
@@ -41,6 +60,13 @@ public class BankAccountDomain {
         return  balance;
     }
 
+    @Override
+    public String toString() {
+        return String.format("balance : %d",balance);
+    }
+    /*
     public void setName(String 윤) {
     }
+
+    */
 }
