@@ -1,9 +1,9 @@
-package com.example.demo._0707.Dog;
+package com.example.demo._0707.Dog.domain;
 
 import java.util.Scanner;
 //state (name, color, breed, hungry)
 // and behavior (barking, fetching, wagging tail)
-class Dog {
+public class Dog {
     private String name;
     private String color;
     private String breed;
@@ -52,29 +52,3 @@ class Dog {
     }
 }
 
-public class Dogmain {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Dog dog = new Dog();
-
-        System.out.println("name?");
-        //String name = scanner.next();
-        dog.setName(scanner.next());
-
-        System.out.println("color?");
-        //String color = scanner.next();
-        dog.setColor(scanner.next());
-
-        System.out.println("breed?");
-        //String breed = scanner.next();
-        dog.setBreed(scanner.next());
-
-        System.out.println("hungry?");
-        //String hungry = scanner.next();
-        dog.setHungry(scanner.next());
-
-        System.out.print(dog.toString());
-
-
-    }
-}
