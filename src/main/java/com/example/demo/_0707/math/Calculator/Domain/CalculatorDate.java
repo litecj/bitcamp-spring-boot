@@ -4,7 +4,7 @@ public class CalculatorDate {
     private int num01;
     private int num02;
     //private int num03;
-    private String opcate;
+    private String opcode;
 
     public void setNum01(int num01) {
         this.num01 = num01;
@@ -20,14 +20,16 @@ public class CalculatorDate {
         return this.num02;
     }
 
-    public String getOpcate(){return opcate;}
-    public void setOpcate(String opcate) {
-        this.opcate = opcate;
+    public String getOpcode(){return opcode;}
+    public void setOpcode(String opcode) {
+        this.opcode = opcode;
     }
+
 
     @Override
     public String toString() {
-        return String.format("%d+%d=%d", num01,num02, num01+num02);
-
+        return String.format("%d+%d=%d", num01, num02, num01 + num02);
     }
+
+
 }
