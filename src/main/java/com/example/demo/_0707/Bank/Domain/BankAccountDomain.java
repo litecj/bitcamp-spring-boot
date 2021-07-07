@@ -1,6 +1,7 @@
-package com.example.demo._0707.Bank;
+package com.example.demo._0707.Bank.Domain;
 
-class BankAccount {
+
+public class BankAccountDomain {
     int balance = 0;
     String name;
      /*  // 생성자
@@ -41,29 +42,5 @@ class BankAccount {
     }
 
     public void setName(String 윤) {
-    }
-}
-
-public class BankAccountObjectDrientVersion {
-    public static void main(String[] args) {
-        //두개의 인스턴스 생성
-        BankAccount yoon = new BankAccount();
-        yoon.name = "yoon";
-        BankAccount park = new BankAccount();
-        park.name = "park";
-
-        //yoon.setName("윤");
-        //System.out.println(yoon.getName());
-
-
-        //각 인스턴스를 대상으로 예금을 진행
-        yoon.deposit(5000);
-        park.deposit(3000);
-        //각 인스턴스를 대상으로 출금을 진행
-        yoon.withdraw(2000);
-        park.withdraw(2000);
-        //각 인스턴스를 대상으로 잔액을 조회
-        yoon.checkMyBalance();
-        park.checkMyBalance();
     }
 }

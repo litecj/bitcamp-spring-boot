@@ -1,6 +1,6 @@
-package com.example.demo._0707.math.controller;
+package com.example.demo._0707.math.Calculator.controller;
 
-import com.example.demo._0707.math.domain.CalculatorDate;
+import com.example.demo._0707.math.Calculator.Domain.CalculatorDate;
 
 import java.util.Scanner;
 
