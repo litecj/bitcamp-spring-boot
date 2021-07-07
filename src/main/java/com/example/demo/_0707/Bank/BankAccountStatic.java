@@ -1,7 +1,6 @@
-package com.example.demo;
+package com.example.demo._0707.Bank;
 
-
-public class BankAccountPO {
+public class BankAccountStatic {
     static int balnce = 0;    //예금 잔액
 
     public static void main(String[] args) {

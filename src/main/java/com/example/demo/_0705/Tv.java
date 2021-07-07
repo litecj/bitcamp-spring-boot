@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo._0705;
 
 class Tv2 {
     public static void main(String[] args) {

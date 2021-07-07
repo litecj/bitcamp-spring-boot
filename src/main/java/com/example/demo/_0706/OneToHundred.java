@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo._0706;
 
 public class OneToHundred {
     public static void main(String[] args) {

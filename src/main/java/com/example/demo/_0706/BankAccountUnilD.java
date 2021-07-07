@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo._0706;
 
 
 //      https://ssons.tistory.com/29 : 관련 참고 자료//
