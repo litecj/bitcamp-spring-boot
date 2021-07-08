@@ -1,6 +1,6 @@
 package com.example.demo._0707.math.Calculator.Domain;
 
-public class CalculatorDate {
+public class CalculatorDTO {
     private int num01;
     private int num02;
     //private int num03;
@@ -28,7 +28,7 @@ public class CalculatorDate {
 
     @Override
     public String toString() {
-        return String.format("%d+%d=%d", num01, num02, num01 + num02);
+        return String.format("%d%s%d=", num01, opcode, num02);
     }
 
 

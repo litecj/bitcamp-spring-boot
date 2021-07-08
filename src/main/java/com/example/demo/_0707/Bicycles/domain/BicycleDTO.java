@@ -1,6 +1,6 @@
 package com.example.demo._0707.Bicycles.domain;
 
-public class Bicycles {
+public class BicycleDTO {
     private String maker;
     private int gear;
     private boolean pedal;

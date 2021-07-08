@@ -1,13 +1,13 @@
 package com.example.demo._0707.Bicycles.controller;
 
-import com.example.demo._0707.Bicycles.domain.Bicycles;
+import com.example.demo._0707.Bicycles.domain.BicycleDTO;
 
 import java.util.Scanner;
 
-public class BicyclesMain {
+public class BicycleController {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Bicycles bicycles = new Bicycles();
+        BicycleDTO bicycles = new BicycleDTO();
 
         System.out.println("maker?");
         bicycles.setmaker(scanner.next());

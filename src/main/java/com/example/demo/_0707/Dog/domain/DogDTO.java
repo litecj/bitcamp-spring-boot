@@ -3,7 +3,7 @@ package com.example.demo._0707.Dog.domain;
 import java.util.Scanner;
 //state (name, color, breed, hungry)
 // and behavior (barking, fetching, wagging tail)
-public class Dog {
+public class DogDTO {
     private String name;
     private String color;
     private String breed;

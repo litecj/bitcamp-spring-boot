@@ -1,13 +1,13 @@
 package com.example.demo._0707.Dog.controller;
 
-import com.example.demo._0707.Dog.domain.Dog;
+import com.example.demo._0707.Dog.domain.DogDTO;
 
 import java.util.Scanner;
 
 public class DogController {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Dog dog = new Dog();
+        DogDTO dog = new DogDTO();
 
         System.out.println("name?");
         //String name = scanner.next();

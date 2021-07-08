@@ -1,7 +1,7 @@
 package com.example.demo._0707.Bank.Domain;
 
 
-public class BankAccountDomain {
+public class BankAccountDTO {
     private int balance = 0;
     private int amount;
     int deposit;
@@ -62,7 +62,7 @@ public class BankAccountDomain {
 
     @Override
     public String toString() {
-        return String.format("balance : %d",balance);
+        return String.format("%s'S balance : %d",getName(),balance);
     }
     /*
     public void setName(String 윤) {
