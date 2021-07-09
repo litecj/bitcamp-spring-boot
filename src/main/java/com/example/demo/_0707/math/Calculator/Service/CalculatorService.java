@@ -8,4 +8,11 @@ public interface CalculatorService {
     int multiple(CalculatorDTO calculator);
     int divide(CalculatorDTO calculator);
     int remain(CalculatorDTO calculator);
+/*
+    int[] sequence(CalculatorDTO calculator);  // num 01 : 1, num 02 : 10
+    int[] sequence2(CalculatorDTO calculator);
+
+ */
+    int[] sequence3(CalculatorDTO calculator);
+
 }
