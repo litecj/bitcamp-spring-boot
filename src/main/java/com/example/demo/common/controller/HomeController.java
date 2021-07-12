@@ -1,13 +1,14 @@
 package com.example.demo.common.controller;
 
-import com.example.demo.bicycles.controller.BicycleController2;
-import com.example.demo.Dog.controller.DogController2;
+import com.example.demo.bicycle.controller.BicycleController2;
+import com.example.demo.dog.controller.DogController2;
 import com.example.demo.calculator.controller.CalculatorController;
 import com.example.demo.util.controller.UtilController;
 
 import java.util.Scanner;
 
 public class HomeController {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         CalculatorController calculatorController = new CalculatorController();
@@ -16,7 +17,7 @@ public class HomeController {
         UtilController utilController = new UtilController();
 
         while (true){
-            System.out.println("\n[menu] 0.Exit 1.Calculator 2.sequence  3.Dog 4.Bicycles 5.Date");
+            System.out.println("\n[menu] 0.Exit 1.Calculator  2.sequence  3.Dog  4.Bicycles  5.Date");
             switch (scanner.next()) {
                 case "0" : return;
                 case "1" : calculatorController.calculate(); break;

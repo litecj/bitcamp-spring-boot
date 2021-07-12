@@ -9,6 +9,10 @@ import java.time.LocalTime;
 public class UtilServiceImpl implements  UtilService{
     UtilDTO util = new UtilDTO();
 
+    public UtilServiceImpl(){
+        this.util = new UtilDTO();
+    }
+
     @Override
     public LocalDate today() {
         util.setToday(LocalDate.now());

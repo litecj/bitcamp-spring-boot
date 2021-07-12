@@ -1,4 +1,4 @@
-package com.example.demo.Dog.service;
+package com.example.demo.dog.service;
 
 public class DogServiceimpl implements DogService{
     @Override

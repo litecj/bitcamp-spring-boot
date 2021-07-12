@@ -1,5 +1,8 @@
-package com.example.demo.Dog.domain;
+package com.example.demo.dog.domain;
 
+import lombok.Data;
+
+@Data
 //state (name, color, breed, hungry)
 // and behavior (barking, fetching, wagging tail)
 public class DogDTO {
@@ -9,26 +12,7 @@ public class DogDTO {
     private String hungry;
     //private boolean hungry;
 
-    public void setName(String name) {
-        this.name = name;
-    }
-    public String getName(){
-        return this.name;
-    }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
-    public String getColor(){
-        return  this.color;
-    }
-
-    public void setBreed(String breed) {
-        this.breed = breed;
-    }
-    public String getBreed(){
-        return  this.breed;
-    }
     /*
     public void  setHungry(boolean hungry){
         this.hungry = hungry;
@@ -38,12 +22,7 @@ public class DogDTO {
     }
     */
 
-    public void  setHungry(String hungry){
-        this.hungry = hungry;
-    }
-    public String getHungry(){
-        return this.hungry;
-    }
+
 
     @Override
     public String toString() {

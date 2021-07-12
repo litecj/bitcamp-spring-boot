@@ -1,11 +1,13 @@
-package com.example.demo.bicycles.controller;
+package com.example.demo.bicycle.controller;
 
-import com.example.demo.bicycles.domain.BicycleDTO;
+import com.example.demo.bicycle.domain.BicycleDTO;
 
 import java.util.Scanner;
 
 public class BicycleController {
+
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         BicycleDTO bicycles = new BicycleDTO();
 

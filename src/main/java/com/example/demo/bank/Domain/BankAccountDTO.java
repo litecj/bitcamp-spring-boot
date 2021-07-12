@@ -14,22 +14,22 @@ public class BankAccountDTO {
     int deposit;
     int withdraw;
 
-     /*  // 생성자
-     BankAccount(String name){
-         this.name = name;
-     }
-     */
-     public int getBalance() {
-         return balance;
-     }
-     public void setBalance(int balance) {
-         this.balance = balance;
-     }
+    /*  // 생성자
+    BankAccount(String name){
+        this.name = name;
+    }
+    */
+    public int getBalance() {
+        return balance;
+    }
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
     public int getAmount() {
-         return this.amount;
+        return this.amount;
     }
     public void setAmount(int amount) {
-         this.amount = amount;
+        this.amount = amount;
     }
     /*
         public int getDeposit() {
@@ -45,17 +45,17 @@ public class BankAccountDTO {
         this.withdraw = withdraw;
     }
      */
-     public String getName() {
-         return name;
-     }
-     public void setName(String name) {
-         this.name = name;
-     }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
 
     // Apa - 명칭 정리}
 
     public int deposit (int amount) {
-         balance += amount;
+        balance += amount;
 
         return balance;
     }
@@ -75,6 +75,5 @@ public class BankAccountDTO {
     /*
     public void setName(String 윤) {
     }
-
     */
 }

@@ -1,14 +1,13 @@
-package com.example.demo.Dog.controller;
+package com.example.demo.dog.controller;
 
-import com.example.demo.Dog.domain.DogDTO;
+import com.example.demo.dog.domain.DogDTO;
 
 import java.util.Scanner;
 
-public class DogController2 {
-    Scanner scanner = new Scanner(System.in);
-    DogDTO dog = new DogDTO();
-
-    public void Dog() {
+public class DogController {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        DogDTO dog = new DogDTO();
 
         System.out.println("name?");
         //String name = scanner.next();
@@ -26,7 +25,8 @@ public class DogController2 {
         //String hungry = scanner.next();
         dog.setHungry(scanner.next());
 
-
         System.out.print(dog.toString());
+
+
     }
 }

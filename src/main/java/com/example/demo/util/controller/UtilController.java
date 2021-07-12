@@ -9,7 +9,12 @@ import java.time.LocalTime;
 
 
 public class UtilController {
-    private UtilService utilService = new UtilServiceImpl();
+    private UtilService utilService;
+    public UtilController(){
+        this.utilService = new UtilServiceImpl();}
+
+    //private UtilService utilService = new UtilServiceImpl();
+
     public void utilController() {
         System.out.println(utilService.tonow());
     }

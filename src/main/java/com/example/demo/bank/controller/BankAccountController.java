@@ -1,11 +1,19 @@
 package com.example.demo.bank.controller;
 
 import com.example.demo.bank.Domain.BankAccountDTO;
+import com.example.demo.bank2.controller.Bank2AccountController;
 
 import java.util.Scanner;
 
 public class BankAccountController {
+    private Scanner scanner;
+    private BankAccountDTO bankAccountDomain;
+    public BankAccountController(){
+        this.scanner = new Scanner(System.in);
+        this.bankAccountDomain = new BankAccountDTO();
+    }
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         BankAccountDTO bankAccountDomain = new BankAccountDTO();
         System.out.println("name?");

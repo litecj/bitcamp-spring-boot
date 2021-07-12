@@ -1,4 +1,4 @@
-package com.example.demo.Dog.service;
+package com.example.demo.dog.service;
 // barking, fetching, wagging tail
 public interface DogService {
 
