@@ -1,4 +1,4 @@
-package com.example.demo._0707.Bicycles.domain;
+package com.example.demo.bicycles.domain;
 
 public class BicycleDTO {
     private String maker;

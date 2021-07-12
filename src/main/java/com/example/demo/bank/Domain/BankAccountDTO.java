@@ -1,12 +1,19 @@
-package com.example.demo._0707.Bank.Domain;
+package com.example.demo.bank.Domain;
 
 
 public class BankAccountDTO {
-    private int balance = 0;
+    private String name;
+    private int amountNumber;
+    private int money;
+    private String bankName;
+    private String date;
+    private float interest;
     private int amount;
+
+    private int balance = 0;
     int deposit;
     int withdraw;
-    private String name;
+
      /*  // 생성자
      BankAccount(String name){
          this.name = name;
@@ -48,7 +55,8 @@ public class BankAccountDTO {
     // Apa - 명칭 정리}
 
     public int deposit (int amount) {
-        balance += amount;
+         balance += amount;
+
         return balance;
     }
     public int withdraw (int amount){

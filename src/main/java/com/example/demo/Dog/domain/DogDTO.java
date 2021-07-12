@@ -1,6 +1,5 @@
-package com.example.demo._0707.Dog.domain;
+package com.example.demo.Dog.domain;
 
-import java.util.Scanner;
 //state (name, color, breed, hungry)
 // and behavior (barking, fetching, wagging tail)
 public class DogDTO {

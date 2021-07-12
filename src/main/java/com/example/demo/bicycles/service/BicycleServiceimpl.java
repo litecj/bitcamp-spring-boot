@@ -1,4 +1,4 @@
-package com.example.demo._0707.Bicycles.service;
+package com.example.demo.bicycles.service;
 
 public class BicycleServiceimpl implements BicycleService {
     //ctrl + i

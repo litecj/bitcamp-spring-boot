@@ -1,6 +1,6 @@
-package com.example.demo._0707.Bicycles.controller;
+package com.example.demo.bicycles.controller;
 
-import com.example.demo._0707.Bicycles.domain.BicycleDTO;
+import com.example.demo.bicycles.domain.BicycleDTO;
 
 import java.util.Scanner;
 

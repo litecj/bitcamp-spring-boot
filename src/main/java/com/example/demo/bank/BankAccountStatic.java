@@ -1,4 +1,4 @@
-package com.example.demo._0707.Bank;
+package com.example.demo.bank;
 
 public class BankAccountStatic {
     static int balnce = 0;    //예금 잔액

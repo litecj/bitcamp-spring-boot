@@ -1,6 +1,6 @@
-package com.example.demo._0707.Bank.controller;
+package com.example.demo.bank.controller;
 
-import com.example.demo._0707.Bank.Domain.BankAccountDTO;
+import com.example.demo.bank.Domain.BankAccountDTO;
 
 import java.util.Scanner;
 

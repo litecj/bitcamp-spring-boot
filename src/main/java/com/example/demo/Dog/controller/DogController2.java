@@ -1,6 +1,6 @@
-package com.example.demo._0707.Dog.controller;
+package com.example.demo.Dog.controller;
 
-import com.example.demo._0707.Dog.domain.DogDTO;
+import com.example.demo.Dog.domain.DogDTO;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package com.example.demo._0707.Bicycles.service;
+package com.example.demo.bicycles.service;
 //changing gear, changing pedal cadence, applying brakes
 
 public interface BicycleService {

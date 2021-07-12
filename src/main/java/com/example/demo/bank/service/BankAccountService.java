@@ -1,2 +1,4 @@
-package com.example.demo.bank.service;public interface BankAccountService {
+package com.example.demo.bank.service;
+
+public interface BankAccountService {
 }

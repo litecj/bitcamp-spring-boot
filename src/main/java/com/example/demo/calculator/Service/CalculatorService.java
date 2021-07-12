@@ -1,6 +1,6 @@
-package com.example.demo._0707.math.Calculator.Service;
+package com.example.demo.calculator.Service;
 
-import com.example.demo._0707.math.Calculator.Domain.CalculatorDTO;
+import com.example.demo.calculator.Domain.CalculatorDTO;
 
 public interface CalculatorService {
     int add(CalculatorDTO calculator);
