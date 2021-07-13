@@ -1,5 +1,6 @@
 package com.example.demo.common.controller;
 
+import com.example.demo.bank2.controller.Bank2AccountController;
 import com.example.demo.bicycle.controller.BicycleController2;
 import com.example.demo.bicycle.domain.BicycleDTO;
 import com.example.demo.dog.controller.DogController2;
@@ -52,7 +53,7 @@ public class HomeController {
                     bicycleController.showBicycles();
                     break;
                 case "5" :
-
+                    new Bank2AccountController();
                     break;
                 case "5-1" :
                     System.out.println("hi");
