@@ -4,21 +4,34 @@ import com.example.demo.bank2.domain.Bank2AccountDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
-@RequiredArgsConstructor
+import java.util.Scanner;
+
 public class Bank2AccountServiceImpl implements Bank2AccountService {
     private Bank2AccountDTO bank2Account;
-    private Bank2AccountDTO[] bank2AccountS;
+    private ArrayList<Bank2AccountDTO> bank2Accounts;
+    public Bank2AccountServiceImpl(){
+        bank2Account = new Bank2AccountDTO();
+        bank2Accounts = new ArrayList<>();}
     //public Bank2AccountServiceImpl(){ this.bank2Account = new Bank2AccountDTO(); }
+
+    @Override
+    public void add(Bank2AccountDTO bank2Account) { bank2Accounts.add(bank2Account);}
+
+    @Override
+    public int count() { return bank2Accounts.size(); }
+
+    @Override
+    public List<Bank2AccountDTO> show() { return bank2Accounts; }
 
 
     @Override
     public void createAccount(Bank2AccountDTO bank) {
-        bank2Account = new Bank2AccountDTO();
-        Random randomNumber = new Random();
-        for (int i = 0; i < 3; i++)
-            System.out.println(randomNumber.nextInt(10000));
-        //bank2Account.setAmountNumber();
+        Random random = new Random();
+        String randomNumber = String.format("%d-%d-%d",random.nextInt(10000),random.nextInt(10000),random.nextInt(10000));
+        bank2Account.setAmountNumber(randomNumber);
         bank2Account.setName(bank.getName());
     }
 

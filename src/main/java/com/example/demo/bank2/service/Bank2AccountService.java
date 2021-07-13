@@ -2,7 +2,12 @@ package com.example.demo.bank2.service;
 
 import com.example.demo.bank2.domain.Bank2AccountDTO;
 
+import java.util.List;
+
 public interface Bank2AccountService {
+    void add(Bank2AccountDTO bank2Account);
+    int count();
+    List<Bank2AccountDTO> show();
     /*
     -은행이름은 상수로 정한다.
     이름을 입력하면 계좌가 생성된다. 단, 계좌번호는 ****-****-****이고 랜덤값이다.

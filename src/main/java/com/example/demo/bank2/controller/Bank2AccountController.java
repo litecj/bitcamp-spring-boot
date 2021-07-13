@@ -17,7 +17,7 @@ public class Bank2AccountController {
         this.bank2AccountService = new Bank2AccountServiceImpl();
     }
 
-    public  void main() {
+    public void main() {
         System.out.println("안녕하세요"+Bank2AccountDTO.BANK_NAME+"입니다.");
         while (true) {
             System.out.println("0.종료  1.계좌생성  2.계좌해지  3.입금  4.출금  5.잔액확인");

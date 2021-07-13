@@ -18,7 +18,7 @@ public class HomeController {
         DogController2 dogController = new DogController2();
         BicycleController2 bicycleController = new BicycleController2();
         while (true){
-            System.out.println("\n[menu] 0.Exit 1.Calculator  2.sequence  3.Dog  3-1.DogList  4.Bicycle  4-1.BicyclesList  5.Date");
+            System.out.println("\n[menu] 0.Exit 1.Calculator  2.sequence  3.Dog  3-1.DogList  4.Bicycle  4-1.BicyclesList   5.Bank   5-1.BankList   6.Date");
             switch (scanner.next()) {
                 case "0" : return;
                 case "1" : new CalculatorController().calculate(); break;
@@ -51,7 +51,13 @@ public class HomeController {
                 case "4-1" :
                     bicycleController.showBicycles();
                     break;
-                case "5" : new UtilController().utilController(); break;
+                case "5" :
+
+                    break;
+                case "5-1" :
+                    System.out.println("hi");
+                    break;
+                case "6" : new UtilController().utilController(); break;
 
             }
 

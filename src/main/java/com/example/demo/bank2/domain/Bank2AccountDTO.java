@@ -7,11 +7,13 @@ public class Bank2AccountDTO {
     public static final String BANK_NAME= "BIT BANK";
     //private String bankName;
     private String name;
-    private int amountNumber;
+    private String amountNumber;
     private int money;
     private int balance;
     private String date;
     private float interest;
 
-
+    @Override
+    public String toString() {
+        return String.format("%s의 계좌",getName()); }
 }
