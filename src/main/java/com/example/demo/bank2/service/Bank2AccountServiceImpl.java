@@ -1,11 +1,16 @@
 package com.example.demo.bank2.service;
 
 import com.example.demo.bank2.domain.Bank2AccountDTO;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Random;
-
+@RequiredArgsConstructor
 public class Bank2AccountServiceImpl implements Bank2AccountService {
     private Bank2AccountDTO bank2Account;
+    private Bank2AccountDTO[] bank2AccountS;
+    //public Bank2AccountServiceImpl(){ this.bank2Account = new Bank2AccountDTO(); }
+
 
     @Override
     public void createAccount(Bank2AccountDTO bank) {

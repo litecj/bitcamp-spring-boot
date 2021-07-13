@@ -23,7 +23,7 @@ public class DogController {
 
         System.out.println("hungry?");
         //String hungry = scanner.next();
-        dog.setHungry(scanner.next());
+        //dog.setHungry(scanner.next());
 
         System.out.print(dog.toString());
 

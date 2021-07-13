@@ -3,6 +3,7 @@ package com.example.demo.calculator.Service;
 import com.example.demo.calculator.Domain.CalculatorDTO;
 
 public class CalculatorServiceImpl implements CalculatorService {
+
     @Override
     public int add(CalculatorDTO calculator) {
         return calculator.getNum01() + calculator.getNum02();
@@ -27,7 +28,20 @@ public class CalculatorServiceImpl implements CalculatorService {
     public int remain(CalculatorDTO calculator) {
         return calculator.getNum01() % calculator.getNum02();
     }
-/*
+
+    @Override
+    public int[] sequence3(CalculatorDTO calculator) {
+        int count = calculator.getNum02() - calculator.getNum01() + 1;
+        int[] arr3 = new int[count];
+
+        int i = 0;
+        for (int j = calculator.getNum01(); j <= calculator.getNum02(); j++) {
+            arr3[i] = j;
+            i++;
+        }
+        return arr3;
+    }
+    /*
     @Override
     public int[] sequence(CalculatorDTO calculator) {
         int[] arr = new int[10];
@@ -53,17 +67,5 @@ public class CalculatorServiceImpl implements CalculatorService {
 
  */
 
-    @Override
-    public int[] sequence3(CalculatorDTO calculator) {
-        int count = calculator.getNum02() - calculator.getNum01() + 1;
-        int[] arr3 = new int[count];
-
-        int i = 0;
-        for (int j = calculator.getNum01(); j <= calculator.getNum02(); j++) {
-            arr3[i] = j;
-            i++;
-        }
-        return arr3;
-    }
 }
 

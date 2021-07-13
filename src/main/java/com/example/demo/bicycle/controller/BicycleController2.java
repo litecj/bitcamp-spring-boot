@@ -4,24 +4,30 @@ import com.example.demo.bicycle.domain.BicycleDTO;
 import com.example.demo.bicycle.service.BicycleService;
 import com.example.demo.bicycle.service.BicycleServiceimpl;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class BicycleController2 {
     private BicycleService bicycleService;
-    private Scanner scanner;
-    private BicycleDTO bicycles;
     public BicycleController2(){
-        this.bicycleService = new BicycleServiceimpl();
-        this.scanner = new Scanner(System.in);
-        this.bicycles = new BicycleDTO();}
+        this.bicycleService = new BicycleServiceimpl(); }
     /*
     Scanner scanner = new Scanner(System.in);
     BicycleDTO bicycles = new BicycleDTO();
      */
+    public void add(BicycleDTO bicycle) {bicycleService.add(bicycle);}
 
+    public void showBicycles() {
+        System.out.println("자전거 수 : " + bicycleService.count());
+        System.out.println(bicycleService.show()); }
 
+    public void changingGear() {   }
 
-    public void BicycleController2(){
+    public String changingPedal() {   return null;  }
+
+    public String applyingBrakes() {     return null;  }
+/*
+    public void bicycleController2(){
         System.out.println("maker?");
         bicycles.setmaker(scanner.next());
 
@@ -37,6 +43,8 @@ public class BicycleController2 {
 
         System.out.print(bicycles.toString());
     }
+
+ */
 
 
 

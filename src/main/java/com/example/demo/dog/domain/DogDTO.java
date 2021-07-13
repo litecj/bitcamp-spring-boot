@@ -9,24 +9,18 @@ public class DogDTO {
     private String name;
     private String color;
     private String breed;
-    private String hungry;
+    //private String hungry;
     //private boolean hungry;
-
-
     /*
     public void  setHungry(boolean hungry){
-        this.hungry = hungry;
-    }
+        this.hungry = hungry;}
     public boolean getHungry(){
-        return this.hungry;
-    }
+        return this.hungry;}
     */
-
-
-
     @Override
     public String toString() {
-        return String.format("Dog의 \n 이름은 : %s \n 색깔은 : %s \n 품종은 : %s \n 배고픔의 상태는 : %s \n입니다.",getName(), getColor(), getBreed(), getHungry());
+        return String.format("Dog의 \n 이름은 : %s \n 색깔은 : %s \n 품종은 : %s \n 입니다. \n ",
+                getName(), getColor(), getBreed());
     }
 }
 

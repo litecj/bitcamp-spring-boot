@@ -1,5 +1,8 @@
 package com.example.demo.bicycle.domain;
 
+import lombok.Data;
+
+@Data
 public class BicycleDTO {
     private String maker;
     private int gear;
@@ -36,7 +39,7 @@ public class BicycleDTO {
 
     @Override
     public String toString() {
-        return String.format("이 자전거의 제조사는 %s 입니다. \n 기어는 %d 입니다. \n " + "페달은 %b이며, 최대 %d km/h까지 가능합니다.",
+        return String.format("\n이 자전거의 제조사는 %s 입니다. \n 기어는 %d 입니다. \n " + "페달은 %b이며, 최대 %d km/h까지 가능합니다.\n",
                 getmaker(),getGear(), getpedal(), getSpeed());
 
     }
