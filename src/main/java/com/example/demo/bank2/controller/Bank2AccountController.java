@@ -76,10 +76,13 @@ public class Bank2AccountController {
         }
 
     }
+    /*
     public void show(){
         System.out.println("현재 계좌 개수 : " + bank2AccountService.count());
         System.out.println(bank2AccountService.findAll());
     }
+
+     */
 
 
 
