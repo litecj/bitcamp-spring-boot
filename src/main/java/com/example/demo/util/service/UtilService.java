@@ -11,5 +11,6 @@ public interface UtilService {
     LocalTime currentTime();
     LocalDateTime now();
     String tonow();
+    String randomNumbers(int digits, boolean allowZeroValue);
 
 }

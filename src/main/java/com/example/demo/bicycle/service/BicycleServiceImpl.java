@@ -5,11 +5,11 @@ import com.example.demo.bicycle.domain.BicycleDTO;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BicycleServiceimpl implements BicycleService {
+public class BicycleServiceImpl implements BicycleService {
     //ctrl + i
     private BicycleDTO bicycle;
     private ArrayList<BicycleDTO> bicycles;
-    public BicycleServiceimpl(){
+    public BicycleServiceImpl(){
         bicycle = new BicycleDTO();
         bicycles = new ArrayList<>(); }
 

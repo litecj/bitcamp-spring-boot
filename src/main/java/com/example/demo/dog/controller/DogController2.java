@@ -2,7 +2,8 @@ package com.example.demo.dog.controller;
 
 import com.example.demo.dog.domain.DogDTO;
 import com.example.demo.dog.service.DogService;
-import com.example.demo.dog.service.DogServiceimpl;
+import com.example.demo.dog.service.DogServiceImpl;
+import com.example.demo.dog.service.DogServiceImpl;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
@@ -11,8 +12,7 @@ import java.util.Scanner;
 
 public class DogController2 {
     private DogService dogService;
-    public DogController2(){
-        dogService = new DogServiceimpl(); }
+    public DogController2(){ dogService = new DogServiceImpl();}
     /*
     private final DogService dogService;
     private final ArrayList<DogDTO> dogs;

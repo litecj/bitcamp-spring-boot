@@ -9,7 +9,7 @@ public interface DogService {
     //컬렉션 생성
     void add(DogDTO dog);
     int count();
-    List<DogDTO> show();
+    List<?> show();
     // 요구사항
     String barking(String bark);
     String fetching(String target);

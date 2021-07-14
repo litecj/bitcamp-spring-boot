@@ -16,7 +16,7 @@ public class UtilController {
     //private UtilService utilService = new UtilServiceImpl();
 
     public void utilController() {
-        System.out.println(utilService.tonow());
+        System.out.printf("현재 %s 입니다.",utilService.tonow());
     }
 
     /*

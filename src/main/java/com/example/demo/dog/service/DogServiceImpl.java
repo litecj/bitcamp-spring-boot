@@ -7,12 +7,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class DogServiceimpl implements DogService{
+public class DogServiceImpl implements DogService {
+
     private DogDTO dog;
     private ArrayList<DogDTO> dogs;
-    public DogServiceimpl(){
+
+    public DogServiceImpl(){
         dog = new DogDTO();
         dogs = new ArrayList<>(); }
+
     @Override
     public void add(DogDTO dog) { dogs.add(dog);}
 
@@ -20,7 +23,7 @@ public class DogServiceimpl implements DogService{
     public int count() { return dogs.size();}
 
     @Override
-    public List<DogDTO> show() {return dogs;}
+    public List<?> show() { return dogs; }
 
     @Override
     public String barking(String bark) { return dog.toString()+bark+"짖는다"; }

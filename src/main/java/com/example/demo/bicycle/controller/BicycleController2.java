@@ -2,15 +2,12 @@ package com.example.demo.bicycle.controller;
 
 import com.example.demo.bicycle.domain.BicycleDTO;
 import com.example.demo.bicycle.service.BicycleService;
-import com.example.demo.bicycle.service.BicycleServiceimpl;
-
-import java.util.List;
-import java.util.Scanner;
+import com.example.demo.bicycle.service.BicycleServiceImpl;
 
 public class BicycleController2 {
     private BicycleService bicycleService;
     public BicycleController2(){
-        this.bicycleService = new BicycleServiceimpl(); }
+        this.bicycleService = new BicycleServiceImpl(); }
     /*
     Scanner scanner = new Scanner(System.in);
     BicycleDTO bicycles = new BicycleDTO();

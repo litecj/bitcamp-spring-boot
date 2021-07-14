@@ -7,7 +7,7 @@ import com.example.demo.dog.controller.DogController2;
 import com.example.demo.calculator.controller.CalculatorController;
 import com.example.demo.dog.domain.DogDTO;
 import com.example.demo.dog.service.DogService;
-import com.example.demo.dog.service.DogServiceimpl;
+import com.example.demo.dog.service.DogServiceImpl;
 import com.example.demo.util.controller.UtilController;
 
 import java.util.Scanner;
@@ -18,8 +18,9 @@ public class HomeController {
         Scanner scanner = new Scanner(System.in);
         DogController2 dogController = new DogController2();
         BicycleController2 bicycleController = new BicycleController2();
+        Bank2AccountController bank2AccountController = new Bank2AccountController();
         while (true){
-            System.out.println("\n[menu] 0.Exit 1.Calculator  2.sequence  3.Dog  3-1.DogList  4.Bicycle  4-1.BicyclesList   5.Bank   5-1.BankList   6.Date");
+            System.out.println("\n[menu] 0.Exit 1.Calculator  2.sequence  3.Dog  3-1.DogList  4.Bicycle  4-1.BicyclesList   5.Bank   6.Date");
             switch (scanner.next()) {
                 case "0" : return;
                 case "1" : new CalculatorController().calculate(); break;
@@ -53,10 +54,12 @@ public class HomeController {
                     bicycleController.showBicycles();
                     break;
                 case "5" :
-                    new Bank2AccountController();
+                    new Bank2AccountController().BankController();
                     break;
                 case "5-1" :
-                    System.out.println("hi");
+                    System.out.println("안녕하세요. 현재 사용된 계좌는\n");
+                    bank2AccountController.show();
+                    System.out.println("\n 입니다.");
                     break;
                 case "6" : new UtilController().utilController(); break;
 
