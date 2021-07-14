@@ -29,13 +29,6 @@ public class Bank2AccountServiceImpl implements Bank2AccountService {
     public List<Bank2AccountDTO> findAll() { return bank2Accounts; }
 
     @Override
-    public String[] findAllAccountNumber() {
-        String[] accountNumbers = new String[count()];
-        for (int i=0; i < count(); i++){
-            accountNumbers[i] = bank2Accounts.get(i).getAmountNumber();  }
-        return accountNumbers; }
-
-    @Override
     public void createAccount(Bank2AccountDTO bank) {
         UtilService utilService = new UtilServiceImpl();
         String accountNumber = utilService.randomNumbers(4,false)+"-"+
@@ -52,6 +45,13 @@ public class Bank2AccountServiceImpl implements Bank2AccountService {
         //bank2Account.setName(bank.getName());
          */
     }
+
+    @Override
+    public String[] findAllAccountNumber() {
+        String[] accountNumbers = new String[count()];
+        for (int i=0; i < count(); i++){
+            accountNumbers[i] = bank2Accounts.get(i).getAmountNumber();  }
+        return accountNumbers; }
 
     @Override
     public void dropAccount(Bank2AccountDTO bank) { return ; }
