@@ -2,12 +2,8 @@ package com.example.demo.common.controller;
 
 import com.example.demo.bank2.controller.Bank2AccountController;
 import com.example.demo.bicycle.controller.BicycleController2;
-import com.example.demo.bicycle.domain.BicycleDTO;
 import com.example.demo.dog.controller.DogController2;
-import com.example.demo.calculator.controller.CalculatorController;
-import com.example.demo.dog.domain.DogDTO;
-import com.example.demo.dog.service.DogService;
-import com.example.demo.dog.service.DogServiceImpl;
+import com.example.demo.math.calculator.controller.CalculatorController;
 import com.example.demo.util.controller.UtilController;
 import com.example.demo.util.service.LambdaUtils;
 
@@ -20,7 +16,7 @@ public class HomeController extends LambdaUtils {
         //BicycleController2 bicycleController = new BicycleController2();
         //Bank2AccountController bank2AccountController = new Bank2AccountController();
         while (true){
-            print.accept("\n[menu] 0.Exit 1.Calculator  2.sequence  3.Dog  4.Bicycle  5.Bank   6.Date");
+            System.out.println("\n[menu] 0.Exit 1.Calculator  2.sequence  3.Dog  4.Bicycle  5.Bank   6.Date");
             switch (scanner.next()) {
                 case "0" : return;
                 case "1" : new CalculatorController().calculate(); break;

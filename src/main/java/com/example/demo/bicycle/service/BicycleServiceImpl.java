@@ -21,7 +21,7 @@ public class BicycleServiceImpl extends LambdaUtils implements BicycleService {
     public int count() { return bicycles.size(); }
 
     @Override
-    public List<BicycleDTO> show() { return bicycles; }
+    public List<?> show() { return bicycles; }
 
     @Override
     public void changingGear() {return ;}

@@ -1,4 +1,4 @@
-package com.example.demo.calculator.Domain;
+package com.example.demo.math.calculator.Domain;
 
 public class CalculatorDTO {
     private int num01;

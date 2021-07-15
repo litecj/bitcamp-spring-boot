@@ -26,13 +26,13 @@ public class BicycleController2 extends LambdaUtils {
                 case "1" :
                     bicycle = new BicycleDTO();
                     print.accept("maker?");
-                    bicycle.setmaker(scanner.next());
+                    bicycle.setMaker(scanner.next());
                     print.accept("gear?");
-                    bicycle.setGear(scanner.nextInt());
+                    bicycle.setGear(scanner.next());
                     print.accept("pedal?");
-                    bicycle.setPedal(scanner.nextBoolean());
+                    bicycle.setPedal(scanner.next());
                     print.accept("speed?");
-                    bicycle.setSpeed(scanner.nextInt());
+                    bicycle.setSpeed(scanner.next());
                     bicycleService.add(bicycle);
                     break;
                 case "2" :

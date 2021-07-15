@@ -1,6 +1,6 @@
-package com.example.demo.calculator.Service;
+package com.example.demo.math.calculator.Service;
 
-import com.example.demo.calculator.Domain.CalculatorDTO;
+import com.example.demo.math.calculator.Domain.CalculatorDTO;
 
 public class CalculatorServiceImpl implements CalculatorService {
 

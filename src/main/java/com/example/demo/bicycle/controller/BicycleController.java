@@ -1,10 +1,11 @@
 package com.example.demo.bicycle.controller;
 
 import com.example.demo.bicycle.domain.BicycleDTO;
+import com.example.demo.util.service.LambdaUtils;
 
 import java.util.Scanner;
 
-public class BicycleController {
+public class BicycleController extends LambdaUtils {
 
     public static void main(String[] args) {
 
@@ -12,19 +13,19 @@ public class BicycleController {
         BicycleDTO bicycles = new BicycleDTO();
 
         System.out.println("maker?");
-        bicycles.setmaker(scanner.next());
+        bicycles.setMaker(scanner.next());
 
         System.out.println("gear?");
-        bicycles.setGear(scanner.nextInt());
+        bicycles.setGear(scanner.next());
 
         System.out.println("pedal?");
-        bicycles.setPedal(scanner.nextBoolean());
+        bicycles.setPedal(scanner.next());
 
         System.out.println("speed?");
-        bicycles.setSpeed(scanner.nextInt());
+        bicycles.setSpeed(scanner.next());
 
 
-        System.out.print(bicycles.toString());
+        print.accept(bicycles.toString());
                 /*"이 자전거의 제조사는 %s 입니다. \n 기어는 %d 입니다. \n " + "페달은 %b이며, 최대 %d km/h까지 가능합니다.",
                 bicycles.getmaker(),bicycles.getGear(), bicycles.getpedal(), bicycles.getSpeed());*/
 

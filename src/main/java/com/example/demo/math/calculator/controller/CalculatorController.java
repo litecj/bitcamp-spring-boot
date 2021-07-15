@@ -1,8 +1,8 @@
-package com.example.demo.calculator.controller;
+package com.example.demo.math.calculator.controller;
 
-import com.example.demo.calculator.Domain.CalculatorDTO;
-import com.example.demo.calculator.Service.CalculatorService;
-import com.example.demo.calculator.Service.CalculatorServiceImpl;
+import com.example.demo.math.calculator.Domain.CalculatorDTO;
+import com.example.demo.math.calculator.Service.CalculatorService;
+import com.example.demo.math.calculator.Service.CalculatorServiceImpl;
 import com.example.demo.util.service.LambdaUtils;
 
 import java.util.Scanner;
@@ -15,9 +15,9 @@ public class CalculatorController extends LambdaUtils {
     public void calculate(){
         print.accept("숫자 1");
         calculator.setNum01(scanner.nextInt());
-        System.out.println("+-*/%");
+        print.accept("+-*/%");
         calculator.setOpcode(scanner.next());
-        System.out.println("숫자 2");
+        print.accept("숫자 2");
         calculator.setNum02(scanner.nextInt());
 
         int result = 0;
@@ -33,19 +33,19 @@ public class CalculatorController extends LambdaUtils {
             case "%" : result = calculatorService.remain(calculator);
             break;
         }
-        System.out.printf("%d %s %d = %d",
+        print.accept (String.format("%d %s %d = %d",
                 calculator.getNum01(),
                 calculator.getOpcode(),
-                calculator.getNum02(), result);
+                calculator.getNum02(), result));
     }
     public void sequence(){
-        System.out.println("수열의 시작값:");
+        print.accept("수열의 시작값:");
         calculator.setNum01(scanner.nextInt());
-        System.out.println("수열의 마지막 값:");
+        print.accept("수열의 마지막 값:");
         calculator.setNum02(scanner.nextInt());
         int[] arr = calculatorService.sequence3(calculator);
         for(int i = 0; i < arr.length; i++){
-            System.out.print(arr[i]+"\t");
+            print.accept(arr[i]+"\t");
         }
     }
 
