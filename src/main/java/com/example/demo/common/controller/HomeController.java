@@ -4,6 +4,7 @@ import com.example.demo.bank2.controller.Bank2AccountController;
 import com.example.demo.bicycle.controller.BicycleController2;
 import com.example.demo.dog.controller.DogController2;
 import com.example.demo.math.calculator.controller.CalculatorController;
+import com.example.demo.math.controller.MathController;
 import com.example.demo.util.controller.UtilController;
 import com.example.demo.util.service.LambdaUtils;
 
@@ -16,12 +17,12 @@ public class HomeController extends LambdaUtils {
         //BicycleController2 bicycleController = new BicycleController2();
         //Bank2AccountController bank2AccountController = new Bank2AccountController();
         while (true){
-            System.out.println("\n[menu] 0.Exit 1.Calculator  2.sequence  3.Dog  4.Bicycle  5.Bank   6.Date");
+            System.out.println("\n[menu] 0.Exit 1.Math  2.Dog  3.Bicycle  4.Bank   5.Date");
             switch (scanner.next()) {
                 case "0" : return;
-                case "1" : new CalculatorController().calculate(); break;
-                case "2" : new CalculatorController().sequence(); break;
-                case "3" :
+                case "1" : new MathController().main(); break;
+                //case "2" : new CalculatorController().sequence(); break;
+                case "2" :
                     new DogController2().DogMain(); break;
                     /*
                     DogDTO dog = new DogDTO();
@@ -33,7 +34,7 @@ public class HomeController extends LambdaUtils {
                     dog.setBreed(scanner.next());
                     dogController.addDog(dog);
                      */
-                case "4" :
+                case "3" :
                     new BicycleController2().BicycleMain(); break;
                     /*
                     BicycleDTO bicycle = new BicycleDTO();
@@ -51,7 +52,7 @@ public class HomeController extends LambdaUtils {
                     bicycleController.showBicycles();
                     break;
                      */
-                case "5" :
+                case "4" :
                     new Bank2AccountController().BankController();
                     break;
                     /*
@@ -61,7 +62,7 @@ public class HomeController extends LambdaUtils {
                     System.out.println("\n 입니다.");
                     break;
                      */
-                case "6" : new UtilController().utilController(); break;
+                case "5" : new UtilController().utilController(); break;
 
             }
 
