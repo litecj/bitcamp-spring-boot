@@ -1,16 +1,17 @@
 package com.example.demo.dog.service;
 
 import com.example.demo.dog.domain.DogDTO;
+import com.example.demo.util.service.LambdaUtils;
 import lombok.RequiredArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class DogServiceImpl implements DogService {
+public class DogServiceImpl extends LambdaUtils implements DogService {
 
-    private DogDTO dog;
-    private ArrayList<DogDTO> dogs;
+    private final DogDTO dog;
+    private final ArrayList<DogDTO> dogs;
 
     public DogServiceImpl(){
         dog = new DogDTO();
@@ -23,7 +24,10 @@ public class DogServiceImpl implements DogService {
     public int count() { return dogs.size();}
 
     @Override
-    public List<?> show() { return dogs; }
+    public List<?> show() {
+        print.accept("등록된 Dog 수 : " + count() + '\n');
+        //print.accept(string.apply(show()));
+        return dogs; }
 
     @Override
     public String barking(String bark) { return dog.toString()+bark+"짖는다"; }

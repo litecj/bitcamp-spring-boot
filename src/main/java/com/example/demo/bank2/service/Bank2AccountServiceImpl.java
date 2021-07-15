@@ -1,6 +1,7 @@
 package com.example.demo.bank2.service;
 
 import com.example.demo.bank2.domain.Bank2AccountDTO;
+import com.example.demo.util.service.LambdaUtils;
 import com.example.demo.util.service.UtilService;
 import com.example.demo.util.service.UtilServiceImpl;
 import lombok.RequiredArgsConstructor;
@@ -11,9 +12,9 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Bank2AccountServiceImpl implements Bank2AccountService {
-    private Bank2AccountDTO bank2Account;
-    private List<Bank2AccountDTO> bank2Accounts;
+public class Bank2AccountServiceImpl extends LambdaUtils implements Bank2AccountService {
+    private final Bank2AccountDTO bank2Account;
+    private final List<Bank2AccountDTO> bank2Accounts;
     public Bank2AccountServiceImpl(){
         bank2Account = new Bank2AccountDTO();
         bank2Accounts = new ArrayList<>();}
@@ -23,7 +24,7 @@ public class Bank2AccountServiceImpl implements Bank2AccountService {
     public void add(Bank2AccountDTO bank2Account) { bank2Accounts.add(bank2Account);}
 
     @Override
-    public int count() { return bank2Accounts.size(); }
+    public String count() { return string.apply(bank2Accounts.size()); }
 
     @Override
     public List<Bank2AccountDTO> findAll() { return bank2Accounts; }
@@ -48,8 +49,9 @@ public class Bank2AccountServiceImpl implements Bank2AccountService {
 
     @Override
     public String[] findAllAccountNumber() {
-        String[] accountNumbers = new String[count()];
-        for (int i=0; i < count(); i++){
+        int count = strToInt.apply((count()));
+        String[] accountNumbers = new String[count];
+        for (int i=0; i < count; i++){
             accountNumbers[i] = bank2Accounts.get(i).getAmountNumber();  }
         return accountNumbers; }
 
@@ -57,19 +59,18 @@ public class Bank2AccountServiceImpl implements Bank2AccountService {
     public void dropAccount(Bank2AccountDTO bank) { return ; }
 
     @Override
-    public int findBalance(Bank2AccountDTO bank) {
+    public String findBalance(Bank2AccountDTO bank) {
         return bank2Account. getMoney();
     }
 
     @Override
-    public int deposit(Bank2AccountDTO bank) {
+    public String deposit(Bank2AccountDTO bank) {
         bank2Account.setBalance(bank2Account.getBalance() + bank.getMoney());
         return bank2Account. getMoney(); }
 
     @Override
-    public int withdraw(Bank2AccountDTO bank) {
-        bank2Account.setBalance(bank2Account.getBalance()-bank.getMoney());
-        return bank2Account. getBalance();
-    }
+    public String withdraw(Bank2AccountDTO bank) {
+        //bank2Account.setBalance(bank2Account.getBalance() - bank.getMoney());
+        return bank2Account. getBalance(); }
 
 }

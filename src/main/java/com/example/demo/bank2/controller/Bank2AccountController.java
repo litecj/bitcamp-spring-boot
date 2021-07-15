@@ -3,73 +3,85 @@ package com.example.demo.bank2.controller;
 import com.example.demo.bank2.domain.Bank2AccountDTO;
 import com.example.demo.bank2.service.Bank2AccountService;
 import com.example.demo.bank2.service.Bank2AccountServiceImpl;
+import com.example.demo.util.service.LambdaUtils;
+import org.springframework.asm.SpringAsmInfo;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Bank2AccountController {
+public class Bank2AccountController extends LambdaUtils {
     private Scanner scanner;
-    private Bank2AccountDTO bank;
+   //private Bank2AccountDTO account;
     private Bank2AccountService bank2AccountService;
 
 
     public Bank2AccountController(){
         this.scanner = new Scanner(System.in);
-        this.bank = new Bank2AccountDTO();
+        //this.account = new Bank2AccountDTO();
         this.bank2AccountService = new Bank2AccountServiceImpl(); }
 
 
     public void BankController() {
-        System.out.println("안녕하세요"+Bank2AccountDTO.BANK_NAME+"입니다.");
+        print.accept("안녕하세요"+Bank2AccountDTO.BANK_NAME+"입니다.");
         Bank2AccountDTO account = null;
         while (true) {
-            System.out.println("0.종료  1.계좌생성  2.계좌해지  3.입금  4.출금  5.잔액확인   5-1.계좌내역   5-2.계좌번호목록  ");
+            print.accept("0.종료  1.계좌생성  2.계좌해지  3.입금  4.출금  5.잔액확인   5-1.계좌내역   5-2.계좌번호목록  ");
             switch (scanner.next()){
                 case "0" : return;
                 case "1" :
-                    System.out.println("1.계좌생성");
-                    System.out.println("name : ");
-                    bank.setName(scanner.next());
-                    bank2AccountService.createAccount(bank);
-                    System.out.printf("name : %s\n amountNumber : %s\n", bank.getName(),bank.getAmountNumber());
+                    account = new Bank2AccountDTO();
+                    print.accept("1.계좌생성");
+                    print.accept("name : ");
+                    account.setName(scanner.next());
+                    bank2AccountService.createAccount(account);
+                    //String s = String.format("name : %s\n amountNumber : %s\n", account.getName(),account.getAmountNumber());
+                    print.accept(String.format("name : %s\n amountNumber : %s\n", account.getName(),account.getAmountNumber()));
                 break;
                 case "2" :
-                    System.out.println("2.계좌해지");
-                    System.out.println("name : ");
-                    bank.setName(scanner.next());
-                    bank2AccountService.dropAccount(bank);
-                    System.out.printf("name : %s\n amountNumber : %s", bank.getName(),bank.getAmountNumber());
+                    print.accept("2.계좌해지");
+                    print.accept("name : ");
+                    account.setName(scanner.next());
+                    bank2AccountService.dropAccount(account);
+                    print.accept(String.format("name : %s\n amountNumber : %s", account.getName(),account.getAmountNumber()));
                 break;
                 case "3" :
+                    print.accept("3.입금");
+                    account = new Bank2AccountDTO();
+                    print.accept("계좌 번호 : ");
+                    account.setAmountNumber(scanner.next());
+                    print.accept("\\");
+                    /*
+                    account = new Bank2AccountDTO();
                     System.out.println("3.입금");
                     System.out.println("name : ");
-                    bank.setName(scanner.next());
+                    account.setName(scanner.next());
                     System.out.println("\\ : ");
-                    bank.setMoney(scanner.nextInt());
-                    bank2AccountService.deposit(bank);
-                    System.out.printf("name : %s\n 입금 : %d \n 잔액 : %d", bank.getName(), bank.getMoney(),bank.getBalance());
+                    account.setMoney(scanner.nextInt());
+                    bank2AccountService.deposit(account);
+                    System.out.printf("name : %s\n 입금 : %d \n 잔액 : %d", account.getName(), account.getMoney(),account.getBalance());
                 break;
+                     */
                 case "4" :
-                    System.out.println("4.출금");
-                    System.out.println("name : ");
-                    bank.setName(scanner.next());
-                    System.out.println("\\ : ");
-                    bank.setMoney(scanner.nextInt());
-                    System.out.printf("name : %s\n 출금 : %d \n 잔액 : %d", bank.getName(), bank.getMoney(),bank.getBalance());
+                    print.accept("4.출금");
+                    print.accept("name : ");
+                    account.setName(scanner.next());
+                    print.accept("\\ : ");
+                    account.setMoney(scanner.next());
+                    print.accept(String.format("name : %s\n 출금 : %d \n 잔액 : %d", account.getName(), account.getMoney(),account.getBalance()));
                 break;
                 case "5" :
-                    System.out.println("5.잔액확인");
-                    System.out.println("name : ");
-                    bank.setName(scanner.next());
-                    System.out.printf("name : %s\n 출금 : %d \n 잔액 : %d", bank.getName(), bank.getMoney(),bank.getBalance());
+                    print.accept("5.잔액확인");
+                    print.accept("name : ");
+                    account.setName(scanner.next());
+                    print.accept(String.format("name : %s\n 출금 : %d \n 잔액 : %d", account.getName(), account.getMoney(),account.getBalance()));
                 break;
                 case "5-1" :
-                    System.out.println("현재 사용 된 계좌는 " + bank2AccountService.count() + "계좌 입니다");
-                    System.out.println("내역은 \n" + bank2AccountService.findAll() + "\n 입니다");
+                    print.accept("현재 사용 된 계좌는 " + bank2AccountService.count() + "계좌 입니다");
+                    print.accept("내역은 \n" + bank2AccountService.findAll() + "\n 입니다");
                 break;
                 case "5-2" :
                     for(String aNList : bank2AccountService.findAllAccountNumber()) {
-                        System.out.println(aNList + '\n');}
+                        print.accept(aNList + '\n');}
                     break;
 
             }
@@ -78,9 +90,10 @@ public class Bank2AccountController {
     }
 
     public void show(){
-        System.out.println("현재 계좌 개수 : " + bank2AccountService.count());
-        System.out.println(bank2AccountService.findAll());
+        print.accept("현재 계좌 개수 : " + bank2AccountService.count());
+        print.accept(string.apply(bank2AccountService.findAll()));
     }
+
 
 
 

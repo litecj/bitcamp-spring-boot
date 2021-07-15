@@ -3,16 +3,17 @@ package com.example.demo.calculator.controller;
 import com.example.demo.calculator.Domain.CalculatorDTO;
 import com.example.demo.calculator.Service.CalculatorService;
 import com.example.demo.calculator.Service.CalculatorServiceImpl;
+import com.example.demo.util.service.LambdaUtils;
 
 import java.util.Scanner;
 
-public class CalculatorController {
+public class CalculatorController extends LambdaUtils {
     Scanner scanner = new Scanner(System.in);
     CalculatorDTO calculator = new CalculatorDTO();
     CalculatorService calculatorService = new CalculatorServiceImpl();
 
     public void calculate(){
-        System.out.println("숫자 1");
+        print.accept("숫자 1");
         calculator.setNum01(scanner.nextInt());
         System.out.println("+-*/%");
         calculator.setOpcode(scanner.next());

@@ -9,23 +9,25 @@ import com.example.demo.dog.domain.DogDTO;
 import com.example.demo.dog.service.DogService;
 import com.example.demo.dog.service.DogServiceImpl;
 import com.example.demo.util.controller.UtilController;
+import com.example.demo.util.service.LambdaUtils;
 
 import java.util.Scanner;
 
-public class HomeController {
+public class HomeController extends LambdaUtils {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        DogController2 dogController = new DogController2();
-        BicycleController2 bicycleController = new BicycleController2();
-        Bank2AccountController bank2AccountController = new Bank2AccountController();
+        //BicycleController2 bicycleController = new BicycleController2();
+        //Bank2AccountController bank2AccountController = new Bank2AccountController();
         while (true){
-            System.out.println("\n[menu] 0.Exit 1.Calculator  2.sequence  3.Dog  3-1.DogList  4.Bicycle  4-1.BicyclesList   5.Bank   6.Date");
+            print.accept("\n[menu] 0.Exit 1.Calculator  2.sequence  3.Dog  4.Bicycle  5.Bank   6.Date");
             switch (scanner.next()) {
                 case "0" : return;
                 case "1" : new CalculatorController().calculate(); break;
                 case "2" : new CalculatorController().sequence(); break;
                 case "3" :
+                    new DogController2().DogMain(); break;
+                    /*
                     DogDTO dog = new DogDTO();
                     System.out.println("name?");
                     dog.setName(scanner.next());
@@ -34,11 +36,10 @@ public class HomeController {
                     System.out.println("breed?");
                     dog.setBreed(scanner.next());
                     dogController.addDog(dog);
-                    break;
-                case "3-1" :
-                    dogController.showDogs();
-                    break;
+                     */
                 case "4" :
+                    new BicycleController2().BicycleMain(); break;
+                    /*
                     BicycleDTO bicycle = new BicycleDTO();
                     System.out.println("maker?");
                     bicycle.setmaker(scanner.next());
@@ -53,14 +54,17 @@ public class HomeController {
                 case "4-1" :
                     bicycleController.showBicycles();
                     break;
+                     */
                 case "5" :
                     new Bank2AccountController().BankController();
                     break;
+                    /*
                 case "5-1" :
                     System.out.println("안녕하세요. 현재 사용된 계좌는\n");
                     bank2AccountController.show();
                     System.out.println("\n 입니다.");
                     break;
+                     */
                 case "6" : new UtilController().utilController(); break;
 
             }

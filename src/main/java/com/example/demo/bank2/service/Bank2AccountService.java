@@ -6,8 +6,8 @@ import java.util.List;
 
 public interface Bank2AccountService {
     void add(Bank2AccountDTO bank2Account);
-    int count();
-    List<Bank2AccountDTO> findAll();
+    String count();
+    List<?> findAll();
     /*
     -은행이름은 상수로 정한다.
     이름을 입력하면 계좌가 생성된다. 단, 계좌번호는 ****-****-****이고 랜덤값이다.
@@ -26,9 +26,9 @@ public interface Bank2AccountService {
     void createAccount(Bank2AccountDTO bank);
     void dropAccount(Bank2AccountDTO bank);
     //String name(Bank2AccountDTO bank);
-    int findBalance(Bank2AccountDTO bank);
-    int deposit(Bank2AccountDTO bank);
-    int withdraw(Bank2AccountDTO bank);
+    String findBalance(Bank2AccountDTO bank);
+    String deposit(Bank2AccountDTO bank);
+    String withdraw(Bank2AccountDTO bank);
 
 
 

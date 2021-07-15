@@ -9,9 +9,9 @@ public class Bank2AccountDTO {
     private String name;
     private String amountNumber;
     private String date;
-    private int money;
-    private int balance;
-    private float interest;
+    private String money;
+    private String balance;
+    private String interest;
 
     /*@Override
     public String toString() {

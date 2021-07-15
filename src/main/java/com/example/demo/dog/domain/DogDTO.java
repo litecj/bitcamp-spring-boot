@@ -19,7 +19,7 @@ public class DogDTO {
     */
     @Override
     public String toString() {
-        return String.format("Dog의 \n 이름은 : %s \n 색깔은 : %s \n 품종은 : %s \n 입니다. \n ",
+        return String.format("%s의 \n 색깔은 : %s \n 품종은 : %s \n 입니다. \n ",
                 getName(), getColor(), getBreed());
     }
 }
