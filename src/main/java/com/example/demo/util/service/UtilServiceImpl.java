@@ -44,7 +44,7 @@ public class UtilServiceImpl implements  UtilService{
        // random.nextInt(1000);    = 인스턴스 메소드
         String first = ""; String result ="" ;
         first+=allowZeroValue?((int)(Math.random()*10)) : ((int) (Math.random()*9+1));
-        for(int i=0; i<digits; i++){result += (int)(Math.random()*10);}
-        return result;
+        for(int i=0; i<digits-1; i++){result += (int)(Math.random()*10);}
+        return first+result;
     }
 }

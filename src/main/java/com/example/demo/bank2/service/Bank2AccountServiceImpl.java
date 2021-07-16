@@ -15,27 +15,38 @@ import java.util.Scanner;
 public class Bank2AccountServiceImpl extends LambdaUtils implements Bank2AccountService {
     private final Bank2AccountDTO bank2Account;
     private final List<Bank2AccountDTO> bank2Accounts;
-    public Bank2AccountServiceImpl(){
+
+    public Bank2AccountServiceImpl() {
         bank2Account = new Bank2AccountDTO();
-        bank2Accounts = new ArrayList<>();}
+        bank2Accounts = new ArrayList<>();
+    }
     //public Bank2AccountServiceImpl(){ this.bank2Account = new Bank2AccountDTO(); }
 
     @Override
-    public void add(Bank2AccountDTO bank2Account) { bank2Accounts.add(bank2Account);}
+    public void add(Bank2AccountDTO bank2Account) {
+        bank2Accounts.add(bank2Account);
+    }
 
     @Override
-    public String count() { return string.apply(bank2Accounts.size()); }
+    public String count() {
+        return string.apply(bank2Accounts.size());
+    }
 
     @Override
-    public List<Bank2AccountDTO> findAll() { return bank2Accounts; }
+    public List<Bank2AccountDTO> findAll() {
+        return bank2Accounts;
+    }
 
     @Override
     public void createAccount(Bank2AccountDTO bank) {
         UtilService utilService = new UtilServiceImpl();
-        String accountNumber = utilService.randomNumbers(4,false)+"-"+
-                utilService.randomNumbers(4,true)+"-"+
-                utilService.randomNumbers(4,true);
+        String accountNumber = utilService.randomNumbers(4, false) + "-" +
+                utilService.randomNumbers(4, true) + "-" +
+                utilService.randomNumbers(4, true);
         bank.setAmountNumber(accountNumber);
+        bank.setBalance("0");
+        utilService.tonow();
+        bank.setInterest("0.01");
         bank2Accounts.add(bank);
         /*
         Random random = new Random();
@@ -51,26 +62,65 @@ public class Bank2AccountServiceImpl extends LambdaUtils implements Bank2Account
     public String[] findAllAccountNumber() {
         int count = strToInt.apply((count()));
         String[] accountNumbers = new String[count];
-        for (int i=0; i < count; i++){
-            accountNumbers[i] = bank2Accounts.get(i).getAmountNumber();  }
-        return accountNumbers; }
-
-    @Override
-    public void dropAccount(Bank2AccountDTO bank) { return ; }
-
-    @Override
-    public String findBalance(Bank2AccountDTO bank) {
-        return bank2Account. getMoney();
+        for (int i = 0; i < count; i++) {
+            accountNumbers[i] = bank2Accounts.get(i).getAmountNumber();
+        }
+        return accountNumbers;
     }
 
     @Override
-    public String deposit(Bank2AccountDTO bank) {
-        bank2Account.setBalance(bank2Account.getBalance() + bank.getMoney());
-        return bank2Account. getMoney(); }
+    public void dropAccount(Bank2AccountDTO bank) {
+        return;
+    }
 
     @Override
-    public String withdraw(Bank2AccountDTO bank) {
-        //bank2Account.setBalance(bank2Account.getBalance() - bank.getMoney());
-        return bank2Account. getBalance(); }
+    public String findBalance(Bank2AccountDTO bank) {
+        return bank2Account.getMoney();
+    }
+
+    @Override
+    public void deposit(Bank2AccountDTO bank) {
+        for (Bank2AccountDTO accountDTO : bank2Accounts) {
+            if (bank.getAmountNumber().equals(accountDTO.getAmountNumber())) {
+                int balance = strToInt.apply(accountDTO.getBalance());
+                accountDTO.setBalance(string.apply(balance + strToInt.apply(bank.getMoney())));
+                break;
+            } else {
+                print.accept("No Amount Number");}
+            return;
+        }
+    }
+    // bank2Account.setBalance(bank2Account.getBalance() + bank.getMoney());
+    // return bank2Account. getMoney(); }
+
+    /*
+     @Override
+    public AccountDTO deposit(AccountDTO param) {
+        AccountDTO account = findAccountByAccountNumber(param.getAccountNumber());
+        int restMoney = strToInt.apply(account.getMoney());
+        account.setMoney(restMoney + param.getMoney());
+        for(AccountDTO a: acounts){
+            if(a.getAccountNumber().equals(account.getAccountNumber())){
+                a.setBalance(account.getMoney());
+                account = a; }
+        }      return account;  }
+     */
+
+    @Override
+    public void withdraw(Bank2AccountDTO bank) {
+        for (Bank2AccountDTO accountDTO : bank2Accounts) {
+            if (bank.getAmountNumber().equals(accountDTO.getAmountNumber())) {
+                int balance = strToInt.apply(accountDTO.getBalance());
+                accountDTO.setBalance(string.apply(balance - strToInt.apply(bank.getMoney())));
+                break;
+            } else {
+                print.accept("No Amount Number");
+                return;
+            }
+        }
+        print.accept(String.format("name : %s \n amountNumber : %s \n  잔액 : %s  \n",bank.getName(),bank.getAmountNumber(),bank.getBalance()));
+    }
+        // bank2Account.setBalance(bank2Account.getBalance() - bank.getMoney());
+        //return bank2Account. getBalance();
 
 }

@@ -47,9 +47,13 @@ public class Bank2AccountController extends LambdaUtils {
                 case "3" :
                     print.accept("3.입금");
                     account = new Bank2AccountDTO();
-                    print.accept("계좌 번호 : ");
+                    print.accept("계좌번호 : ");
                     account.setAmountNumber(scanner.next());
-                    print.accept("\\");
+                    print.accept("\\ : ");
+                    account.setMoney(scanner.next());
+                    bank2AccountService.deposit(account);
+                    print.accept(String.format("name : %s\n 입금 : %s \n 잔액 : %s", account.getName(), account.getMoney(),account.getBalance()));
+                break;
                     /*
                     account = new Bank2AccountDTO();
                     System.out.println("3.입금");
@@ -63,17 +67,18 @@ public class Bank2AccountController extends LambdaUtils {
                      */
                 case "4" :
                     print.accept("4.출금");
-                    print.accept("name : ");
+                    print.accept("계좌번호 : ");
                     account.setName(scanner.next());
                     print.accept("\\ : ");
                     account.setMoney(scanner.next());
-                    print.accept(String.format("name : %s\n 출금 : %d \n 잔액 : %d", account.getName(), account.getMoney(),account.getBalance()));
+                    bank2AccountService.withdraw(account);
+                    print.accept(String.format("name : %s\n 출금 : %s \n 잔액 : %s", account.getName(), account.getMoney(),account.getBalance()));
                 break;
                 case "5" :
                     print.accept("5.잔액확인");
-                    print.accept("name : ");
-                    account.setName(scanner.next());
-                    print.accept(String.format("name : %s\n 출금 : %d \n 잔액 : %d", account.getName(), account.getMoney(),account.getBalance()));
+                    print.accept("계좌번호 : ");
+                    account.setAmountNumber(scanner.next());
+                    print.accept(String.format("name : %s\n 계좌번호 : %s \n 잔액 : %s", account.getName(), account.getAmountNumber(),account.getBalance()));
                 break;
                 case "5-1" :
                     print.accept("현재 사용 된 계좌는 " + bank2AccountService.count() + "계좌 입니다");

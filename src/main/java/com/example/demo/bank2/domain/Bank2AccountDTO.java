@@ -20,10 +20,10 @@ public class Bank2AccountDTO {
     @Override
     public String toString() {
         return BANK_NAME +'\n'+
-                "예금주 = " + name + '\'' +'\n'+
-                "계좌번호 = " + amountNumber + '\'' +'\n'+
-                "잔고 = " + balance + '\'' +'\n'+
-                "거래일자 = " + date + '\'' +'\n'+
+                "예금주 = " + name +'\n'+
+                "계좌번호 = " + amountNumber  +'\n'+
+                "잔고 = " + balance +'\n'+
+                "거래일자 = " + date  +'\n'+
                 "이자율  = " + interest + '\n'
                 ;
         //String.format("%s의 계좌",getName()); }

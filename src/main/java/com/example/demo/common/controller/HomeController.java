@@ -3,7 +3,7 @@ package com.example.demo.common.controller;
 import com.example.demo.bank2.controller.Bank2AccountController;
 import com.example.demo.bicycle.controller.BicycleController2;
 import com.example.demo.dog.controller.DogController2;
-import com.example.demo.math.calculator.controller.CalculatorController;
+import com.example.demo.himart.controller.HiMartController;
 import com.example.demo.math.controller.MathController;
 import com.example.demo.util.controller.UtilController;
 import com.example.demo.util.service.LambdaUtils;
@@ -17,7 +17,7 @@ public class HomeController extends LambdaUtils {
         //BicycleController2 bicycleController = new BicycleController2();
         //Bank2AccountController bank2AccountController = new Bank2AccountController();
         while (true){
-            System.out.println("\n[menu] 0.Exit 1.Math  2.Dog  3.Bicycle  4.Bank   5.Date");
+            System.out.println("\n[menu] 0.Exit 1.Math  2.Dog  3.Bicycle  4.Bank  5.Date  6.HiMart");
             switch (scanner.next()) {
                 case "0" : return;
                 case "1" : new MathController().main(); break;
@@ -63,6 +63,7 @@ public class HomeController extends LambdaUtils {
                     break;
                      */
                 case "5" : new UtilController().utilController(); break;
+                case "6" : new HiMartController().HiMartMain(); break;
 
             }
 

@@ -27,8 +27,8 @@ public interface Bank2AccountService {
     void dropAccount(Bank2AccountDTO bank);
     //String name(Bank2AccountDTO bank);
     String findBalance(Bank2AccountDTO bank);
-    String deposit(Bank2AccountDTO bank);
-    String withdraw(Bank2AccountDTO bank);
+    void deposit(Bank2AccountDTO bank);
+    void withdraw(Bank2AccountDTO bank);
 
 
 
