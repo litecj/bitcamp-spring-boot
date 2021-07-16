@@ -78,7 +78,7 @@ public class Bank2AccountController extends LambdaUtils {
                     print.accept("5.잔액확인");
                     print.accept("계좌번호 : ");
                     account.setAmountNumber(scanner.next());
-                   // print.accept(String.format("name : %s\n 계좌번호 : %s \n 잔액 : %s", account.getName(), account.getAmountNumber(),account.getBalance()));
+                    print.accept(String.format("name : %s\n 계좌번호 : %s \n 잔액 : %s", account.getName(), account.getAmountNumber(),account.getBalance()));
                 break;
                 case "5-1" :
                     print.accept("현재 사용 된 계좌는 " + bank2AccountService.count() + "계좌 입니다");

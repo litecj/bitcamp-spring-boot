@@ -45,7 +45,7 @@ public class Bank2AccountServiceImpl extends LambdaUtils implements Bank2Account
                 utilService.randomNumbers(4, true);
         bank.setAmountNumber(accountNumber);
         bank.setBalance("0");
-        utilService.tonow();
+        bank.setDate(utilService.tonow());
         bank.setInterest("0.01");
         bank2Accounts.add(bank);
         /*
@@ -89,6 +89,7 @@ public class Bank2AccountServiceImpl extends LambdaUtils implements Bank2Account
                 print.accept("No Amount Number");}
             return;
         }
+        print.accept(String.format("name : %s \n amountNumber : %s \n  잔액 : %s  \n",bank.getName(),bank.getAmountNumber(),bank.getBalance()));
     }
     // bank2Account.setBalance(bank2Account.getBalance() + bank.getMoney());
     // return bank2Account. getMoney(); }
