@@ -52,7 +52,7 @@ public class Bank2AccountController extends LambdaUtils {
                     print.accept("\\ : ");
                     account.setMoney(scanner.next());
                     bank2AccountService.deposit(account);
-                    print.accept(String.format("name : %s\n 입금 : %s \n 잔액 : %s", account.getName(), account.getMoney(),account.getBalance()));
+                    //print.accept(String.format("name : %s\n 입금 : %s \n 잔액 : %s", account.getName(), account.getMoney(),account.getBalance()));
                 break;
                     /*
                     account = new Bank2AccountDTO();
@@ -78,10 +78,11 @@ public class Bank2AccountController extends LambdaUtils {
                     print.accept("5.잔액확인");
                     print.accept("계좌번호 : ");
                     account.setAmountNumber(scanner.next());
-                    print.accept(String.format("name : %s\n 계좌번호 : %s \n 잔액 : %s", account.getName(), account.getAmountNumber(),account.getBalance()));
+                    bank2AccountService.findBalance(account);
+                    //print.accept(String.format("name : %s\n 계좌번호 : %s \n 잔액 : %s", account.getName(), account.getAmountNumber(),account.getBalance()));
                 break;
                 case "5-1" :
-                    print.accept("현재 사용 된 계좌는 " + bank2AccountService.count() + "계좌 입니다");
+                    print.accept("현재 사용 된 계좌는 " + bank2AccountService.count() + "계좌 입니다\n");
                     print.accept("내역은 \n" + bank2AccountService.findAll() + "\n 입니다");
                 break;
                 case "5-2" :

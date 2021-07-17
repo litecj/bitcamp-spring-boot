@@ -74,8 +74,18 @@ public class Bank2AccountServiceImpl extends LambdaUtils implements Bank2Account
     }
 
     @Override
-    public String findBalance(Bank2AccountDTO bank) {
-        return bank2Account.getMoney();
+    public void findBalance(Bank2AccountDTO bank) {
+        for (Bank2AccountDTO accountDTO : bank2Accounts) {
+            if (bank.getAmountNumber().equals(accountDTO.getAmountNumber())) {
+                //int balance = strToInt.apply(accountDTO.getBalance());
+                //accountDTO.setBalance(string.apply(balance + strToInt.apply(bank.getMoney())));
+                print.accept(String.format("현재 %s님의 계좌 잔액은 %s 입니다.",accountDTO.getName(), accountDTO.getBalance()));
+                break;
+            } else {
+                print.accept("No Amount Number");}
+            return;
+        }
+        //return bank2Account.getMoney();
     }
 
     @Override
@@ -84,12 +94,13 @@ public class Bank2AccountServiceImpl extends LambdaUtils implements Bank2Account
             if (bank.getAmountNumber().equals(accountDTO.getAmountNumber())) {
                 int balance = strToInt.apply(accountDTO.getBalance());
                 accountDTO.setBalance(string.apply(balance + strToInt.apply(bank.getMoney())));
+                print.accept(String.format("입금 금액 : %s \n 입금 후 계좌 상황 : \n %S",bank.getMoney(), accountDTO));
                 break;
             } else {
                 print.accept("No Amount Number");}
             return;
         }
-        print.accept(String.format("name : %s \n amountNumber : %s \n  잔액 : %s  \n",bank.getName(),bank.getAmountNumber(),bank.getBalance()));
+        //print.accept(String.format("name : %s \n amountNumber : %s \n  잔액 : %s  \n",bank.getName(),bank.getAmountNumber(),bank.getBalance()));
     }
     // bank2Account.setBalance(bank2Account.getBalance() + bank.getMoney());
     // return bank2Account. getMoney(); }
@@ -113,13 +124,14 @@ public class Bank2AccountServiceImpl extends LambdaUtils implements Bank2Account
             if (bank.getAmountNumber().equals(accountDTO.getAmountNumber())) {
                 int balance = strToInt.apply(accountDTO.getBalance());
                 accountDTO.setBalance(string.apply(balance - strToInt.apply(bank.getMoney())));
+                print.accept(String.format("출금 금액 : %s \n 입금 후 계좌 상황 : \n %S",bank.getMoney(), accountDTO));
                 break;
             } else {
                 print.accept("No Amount Number");
                 return;
             }
         }
-        print.accept(String.format("name : %s \n amountNumber : %s \n  잔액 : %s  \n",bank.getName(),bank.getAmountNumber(),bank.getBalance()));
+        //print.accept(String.format("name : %s \n amountNumber : %s \n  잔액 : %s  \n",bank.getName(),bank.getAmountNumber(),bank.getBalance()));
     }
         // bank2Account.setBalance(bank2Account.getBalance() - bank.getMoney());
         //return bank2Account. getBalance();
