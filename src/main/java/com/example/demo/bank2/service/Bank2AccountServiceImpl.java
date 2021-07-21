@@ -15,10 +15,12 @@ import java.util.Scanner;
 public class Bank2AccountServiceImpl extends LambdaUtils implements Bank2AccountService {
     private final Bank2AccountDTO bank2Account;
     private final List<Bank2AccountDTO> bank2Accounts;
+    private final UtilService utilService;
 
     public Bank2AccountServiceImpl() {
         bank2Account = new Bank2AccountDTO();
         bank2Accounts = new ArrayList<>();
+        utilService = new UtilServiceImpl();
     }
     //public Bank2AccountServiceImpl(){ this.bank2Account = new Bank2AccountDTO(); }
 
@@ -39,7 +41,6 @@ public class Bank2AccountServiceImpl extends LambdaUtils implements Bank2Account
 
     @Override
     public void createAccount(Bank2AccountDTO bank) {
-        UtilService utilService = new UtilServiceImpl();
         String accountNumber = utilService.randomNumbers(4, false) + "-" +
                 utilService.randomNumbers(4, true) + "-" +
                 utilService.randomNumbers(4, true);
@@ -48,6 +49,7 @@ public class Bank2AccountServiceImpl extends LambdaUtils implements Bank2Account
         bank.setDate(utilService.tonow());
         bank.setInterest("0.01");
         bank2Accounts.add(bank);
+        print.accept(String.format("name : %s\namountNumber : %s\n",bank.getName(),bank.getAmountNumber()));
         /*
         Random random = new Random();
         String randomNumber = String.format("%d-%d-%d",random.nextInt(10000),random.nextInt(10000),random.nextInt(10000));
@@ -75,10 +77,12 @@ public class Bank2AccountServiceImpl extends LambdaUtils implements Bank2Account
 
     @Override
     public void findBalance(Bank2AccountDTO bank) {
+        String balance = "";
         for (Bank2AccountDTO accountDTO : bank2Accounts) {
             if (bank.getAmountNumber().equals(accountDTO.getAmountNumber())) {
                 //int balance = strToInt.apply(accountDTO.getBalance());
                 //accountDTO.setBalance(string.apply(balance + strToInt.apply(bank.getMoney())));
+                balance = accountDTO.getAmountNumber().equals(accountDTO.getAmountNumber())? accountDTO.getBalance():"0";
                 print.accept(String.format("현재 %s님의 계좌 잔액은 %s 입니다.",accountDTO.getName(), accountDTO.getBalance()));
                 break;
             } else {
@@ -98,6 +102,7 @@ public class Bank2AccountServiceImpl extends LambdaUtils implements Bank2Account
                 break;
             } else {
                 print.accept("No Amount Number");}
+        bank.setDate(utilService.tonow());
             return;
         }
         //print.accept(String.format("name : %s \n amountNumber : %s \n  잔액 : %s  \n",bank.getName(),bank.getAmountNumber(),bank.getBalance()));
@@ -127,13 +132,25 @@ public class Bank2AccountServiceImpl extends LambdaUtils implements Bank2Account
                 print.accept(String.format("출금 금액 : %s \n 입금 후 계좌 상황 : \n %S",bank.getMoney(), accountDTO));
                 break;
             } else {
-                print.accept("No Amount Number");
-                return;
-            }
+                print.accept("No Amount Number");}
+        bank.setDate(utilService.tonow());
+            return;
         }
         //print.accept(String.format("name : %s \n amountNumber : %s \n  잔액 : %s  \n",bank.getName(),bank.getAmountNumber(),bank.getBalance()));
     }
         // bank2Account.setBalance(bank2Account.getBalance() - bank.getMoney());
         //return bank2Account. getBalance();
 
+
+    @Override
+    public Bank2AccountDTO findAccountByAccountNumber(String accountNumber) {
+        Bank2AccountDTO bank2Account = null;
+        for (Bank2AccountDTO a: bank2Accounts){
+            if (a.getAmountNumber().equals(accountNumber)){
+                bank2Account = a;
+                break;
+            }
+        }
+        return bank2Account;
+    }
 }

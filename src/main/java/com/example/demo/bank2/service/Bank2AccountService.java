@@ -29,6 +29,7 @@ public interface Bank2AccountService {
     void findBalance(Bank2AccountDTO bank);
     void deposit(Bank2AccountDTO bank);
     void withdraw(Bank2AccountDTO bank);
+    Bank2AccountDTO findAccountByAccountNumber(String accountNumber);
 
 
 

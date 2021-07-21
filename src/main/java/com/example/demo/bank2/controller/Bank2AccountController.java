@@ -35,7 +35,7 @@ public class Bank2AccountController extends LambdaUtils {
                     account.setName(scanner.next());
                     bank2AccountService.createAccount(account);
                     //String s = String.format("name : %s\n amountNumber : %s\n", account.getName(),account.getAmountNumber());
-                    print.accept(String.format("name : %s\n amountNumber : %s\n", account.getName(),account.getAmountNumber()));
+                    //print.accept(String.format("name : %s\n amountNumber : %s\n", account.getName(),account.getAmountNumber()));
                 break;
                 case "2" :
                     print.accept("2.계좌해지");
@@ -46,8 +46,8 @@ public class Bank2AccountController extends LambdaUtils {
                 break;
                 case "3" :
                     print.accept("3.입금");
-                    account = new Bank2AccountDTO();
                     print.accept("계좌번호 : ");
+                    //account = new Bank2AccountDTO();
                     account.setAmountNumber(scanner.next());
                     print.accept("\\ : ");
                     account.setMoney(scanner.next());
