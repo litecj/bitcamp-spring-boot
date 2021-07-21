@@ -47,11 +47,12 @@ public class Bank2AccountController extends LambdaUtils {
                 case "3" :
                     print.accept("3.입금");
                     print.accept("계좌번호 : ");
-                    //account = new Bank2AccountDTO();
+                    account = new Bank2AccountDTO();
                     account.setAmountNumber(scanner.next());
                     print.accept("\\ : ");
                     account.setMoney(scanner.next());
                     bank2AccountService.deposit(account);
+                    System.out.println(account.getAmountNumber());
                     //print.accept(String.format("name : %s\n 입금 : %s \n 잔액 : %s", account.getName(), account.getMoney(),account.getBalance()));
                 break;
                     /*
