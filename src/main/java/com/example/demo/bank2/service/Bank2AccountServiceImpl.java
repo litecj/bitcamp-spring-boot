@@ -95,9 +95,6 @@ public class Bank2AccountServiceImpl extends LambdaUtils implements Bank2Account
     @Override
     public void deposit(Bank2AccountDTO bank) {
         for (Bank2AccountDTO accountDTO : bank2Accounts) {
-            System.out.println(bank.getAmountNumber());
-            System.out.println(accountDTO.getAmountNumber());
-
             if (bank.getAmountNumber().equals(accountDTO.getAmountNumber())) {
                 int balance = strToInt.apply(accountDTO.getBalance());
                 accountDTO.setBalance(string.apply(balance + strToInt.apply(bank.getMoney())));
@@ -139,9 +136,10 @@ public class Bank2AccountServiceImpl extends LambdaUtils implements Bank2Account
                 break;
             } else {
                 print.accept("No Amount Number");}
+        }
         bank.setDate(utilService.tonow());
             return;
-        }
+
         //print.accept(String.format("name : %s \n amountNumber : %s \n  잔액 : %s  \n",bank.getName(),bank.getAmountNumber(),bank.getBalance()));
     }
         // bank2Account.setBalance(bank2Account.getBalance() - bank.getMoney());
